@@ -5,7 +5,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
 from src.datascience.constants import *
 from src.datascience.utils.common import read_yaml, create_directories
-from src.datascience.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig)
+from src.datascience.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig)
 
 
 class ConfigurationManager:
@@ -78,7 +78,7 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
-    '''
+    
     
     def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         config=self.config.model_evaluation
@@ -94,8 +94,8 @@ class ConfigurationManager:
             all_params=params,
             metric_file_name = config.metric_file_name,
             target_column = schema.name,
-            mlflow_uri="https://dagshub.com/krishnaik06/datascienceproject.mlflow"
-
+            mlflow_uri="https://dagshub.com/rafei18/datascienceproject.mlflow"
+ 
 
         )
-        return model_evaluation_config '''
+        return model_evaluation_config 
