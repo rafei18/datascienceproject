@@ -15,7 +15,7 @@ class DataTransformationTrainingPipeline:
 
         try:
             with open(Path("artifacts/data_validation/status.txt"),'r') as f:
-                status=f.read().split(" ")[-1]
+                status=f.read().split(" ")[-1] # to get the last item 'True of False'
             if status=="True":
                 config=ConfigurationManager()
                 data_transformation_config=config.get_data_transformation_config()
